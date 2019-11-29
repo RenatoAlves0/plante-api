@@ -39,7 +39,7 @@ router.put('/:familiaId', (req, res, next) => {
 })
 
 router.delete('/:familiaId', (req, res, next) => {
-    Familia.remove({ _id: req.params.familiaId }).exec()
+    Familia.deleteOne({ _id: req.params.familiaId }).exec()
         .then(result => { res.status(200).json({ message: "Deletado com sucesso!" }) })
         .catch(err => { res.status(500).json({ error: err }) })
 })

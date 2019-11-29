@@ -41,7 +41,7 @@ router.put('/:especieId', (req, res, next) => {
 })
 
 router.delete('/:especieId', (req, res, next) => {
-    Especie.remove({ _id: req.params.especieId }).exec()
+    Especie.deleteOne({ _id: req.params.especieId }).exec()
         .then(result => { res.status(200).json({ message: "Deletado com sucesso!" }) })
         .catch(err => { res.status(500).json({ error: err }) })
 })

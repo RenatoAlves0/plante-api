@@ -48,7 +48,7 @@ router.put('/:nutrienteId', (req, res, next) => {
 })
 
 router.delete('/:nutrienteId', (req, res, next) => {
-    Nutriente.remove({ _id: req.params.nutrienteId }).exec()
+    Nutriente.deleteOne({ _id: req.params.nutrienteId }).exec()
         .then(result => { res.status(200).json({ message: "Deletado com sucesso!" }) })
         .catch(err => { res.status(500).json({ error: err }) })
 })

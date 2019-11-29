@@ -45,7 +45,7 @@ router.put('/:soloId', (req, res, next) => {
 })
 
 router.delete('/:soloId', (req, res, next) => {
-    Solo.remove({ _id: req.params.soloId }).exec()
+    Solo.deleteOne({ _id: req.params.soloId }).exec()
         .then(result => { res.status(200).json({ message: "Deletado com sucesso!" }) })
         .catch(err => { res.status(500).json({ error: err }) })
 })

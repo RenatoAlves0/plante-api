@@ -41,7 +41,7 @@ router.put('/:generoId', (req, res, next) => {
 })
 
 router.delete('/:generoId', (req, res, next) => {
-    Genero.remove({ _id: req.params.generoId }).exec()
+    Genero.deleteOne({ _id: req.params.generoId }).exec()
         .then(result => { res.status(200).json({ message: "Deletado com sucesso!" }) })
         .catch(err => { res.status(500).json({ error: err }) })
 })

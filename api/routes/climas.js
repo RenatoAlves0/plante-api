@@ -40,7 +40,7 @@ router.put('/:climaId', (req, res, next) => {
 })
 
 router.delete('/:climaId', (req, res, next) => {
-    Clima.remove({ _id: req.params.climaId }).exec()
+    Clima.deleteOne({ _id: req.params.climaId }).exec()
         .then(result => { res.status(200).json({ message: "Deletado com sucesso!" }) })
         .catch(err => { res.status(500).json({ error: err }) })
 })
